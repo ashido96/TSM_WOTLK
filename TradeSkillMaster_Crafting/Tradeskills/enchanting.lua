@@ -1,4 +1,4 @@
-﻿-- ------------------------------------------------------------------------------------- --
+-- ------------------------------------------------------------------------------------- --
 -- 					TradeSkillMaster_Crafting - AddOn by Sapu94							 	  	  --
 --   http://wow.curse.com/downloads/wow-addons/details/tradeskillmaster_crafting.aspx    --
 --																													  --
@@ -38,7 +38,11 @@ function Enchanting:GetSlot(itemID)
 	return Enchanting.slot[itemID] or #Enchanting.slotList
 end
 
-Enchanting.vellumID = 38682
+-- no support for weapon/armor vellum in backports currently
+-- bad fix uses armor vellum 3, since that is more commonly used than weapon vellum 3
+-- still manually craft weapon vellums
+-- an actual fix would be at lines 201->205in Addons\TradeSkillMaster_Crafting\Modules\Scan.lua
+Enchanting.vellumID = 43145
 
 Enchanting.slotList = {L["2H Weapon"], L["Boots"], L["Bracers"], L["Chest"], L["Cloak"], L["Gloves"], L["Shield"], L["Staff"], L["Weapon"], L["Other"]}
 
